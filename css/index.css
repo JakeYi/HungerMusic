@@ -1,234 +1,266 @@
-.layout {
-    width: 600px;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body, main{
+    height: 100%;
+  }
+  
+  body {
+    font: 14px/1.5 cursive;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #444;
+  }
+  
+  ul,li{
+    list-style: none;
+  }
+  html,body,section {
+   height: 100%;
+   overflow: hidden;
+  }
+  
+  .layout {
     margin: 0 auto;
-}
-
-@media (min-width: 700px){
+    width: 600px;
+  }
+  
+  @media (min-width: 700px) {
     .layout {
-        width: 600px;
+      width: 600px;
     }
-}
-
-@media (min-width: 900px){
+  }
+  @media (min-width: 900px) {
     .layout {
-        width: 800px;
+      width: 800px;
     }
-}
-
-@media (min-width: 1000px){
+  }
+  @media (min-width: 1000px) {
     .layout {
-        width: 800px;
+      width: 900px;
     }
-}
-
-@media (min-width: 1200px){
+  }
+  @media (min-width: 1200px) {
     .layout {
-        width: 1100px;
+      width: 1100px;
     }
-}
-
-#page-cover {
+  }
+  
+  #page-cover {
     display: none;
-}
-
-.bg {
+  }
+  
+  .bg {
     position: absolute;
     z-index: -1;
-    top: -10px;
-    right: -10px;
-    bottom: -10px;
     left: -10px;
+    top: -10px;
+    bottom: -10px;
+    right: -10px;
     background: url(http://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-big) center center no-repeat;
     background-size: cover;
     filter: blur(4px);
-}
-.bg::before {
+  }
+  .bg::before{
     content: '';
     position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    background: rgba(0,0,0,0.4)
-}
-
-main {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.4);  
+  }
+  
+  main {
     padding-top: 12vh;
-    height: calc(100% - 24vh)
-}
-main::after {
+    height: calc(100% - 24vh); /* 1vh == 0.125px */
+  }
+  main::after{
     content: '';
     display: block;
     clear: both;
-}
-
-main .aside {
+  }
+  
+  
+  
+  main .aside {
     float: left;
-}
-main .aside > figure {
+  }
+  
+  main .aside > figure{
     width: 46vh;
     height: 46vh;
-    background: url(http://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-middle) center center no-repeat;
-    background-size: cover
-}
-
-main .aside .actions {
+    background-image: url(http://cloud.hunger-valley.com/music/public_tuijian_spring.jpg-middle);
+    background-size: cover;
+    position-position: center center;
+  }
+  main .aside .actions {
     display: flex;
     margin-top: 4vh;
-}
-
-main .actions .iconfont {
+  }
+  main .aside .iconfont{
     flex: 1;
     text-align: center;
     font-size: 5vh;
     color: rgba(255,255,255,0.4);
     transition: color .4s;
     cursor: pointer;
-}
-
-main .aside .iconfont:hover {
+  }
+  main .aside .iconfont:hover{
     color: #fff;
-}
-main .aside .iconfont .active {
+  }
+  main .aside .iconfont.active{
     color: #ff5722;
-}
-
-main .detail {
+  }
+  
+  
+  main .detail {
     margin-left: 56vh;
     color: #fff;
-}
-
-main .detail .tag {
+  }
+  main .detail .tag{
     font-size: 2vh;
     padding: .4em .8em;
     background: #2e6eec;
-}
-
-main .detail h1 {
+  }
+  main .detail h1{
     font-size: 6vh;
     margin-top: 2vh;
-}
-
-main .icons {
+  }
+  main .icons{
     display: flex;
     font-size: 3vh;
     margin-top: 12vh;
-}
-
-main .icons li {
+  }
+  main .icons li{
     flex: 1;
-}
-
-main .icons .iconfont {
+  }
+  main .icons .iconfont{
     font-size: 3vh;
     margin-right: 1vh;
-}
-main .area-bar {
+  }
+  main .area-bar{
     margin-top: 10vh;
     display: flex;
     align-items: center;
-}
-main .area-bar .bar {
+  }
+  main .area-bar .bar{
     position: relative;
     flex: 1;
     height: .8vh;
     border-radius: .2vh;
-    background: rgba(255,255,255,0.4);
-}
-main .area-bar .current-time {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  main .area-bar .current-time{
     width: 3vh;
     font-size: 2vh;
     margin-left: 1vh;
-}
-main .area-bar .bar-progress {
+  }
+  main .area-bar .bar-progress{
     position: absolute;
     height: .8vh;
-    width: 10%;
+    width: 0%;
     transition: width .8s;
     background-color: #fff;
     border-radius: .2vh;
-}
-main .author {
+    transition: width .8s;
+  }
+  
+  main .author {
     font-size: 2vh;
     margin-top: 2vh;
-    color: rgba(255,255,255,0.6);
-}
-main .lyric {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  main .lyric {
     font-size: 3vh;
     margin-top: 3vh;
-    color: rgba(255,255,255,1);
-}
-
-footer {
+    color: rgba(255, 255, 255, 1);
+  }
+  
+  
+  
+  footer {
     height: 24vh;
     color: #fff;
-    background: rgba(255,255,255,0.2);
-    box-shadow:  0px .25vh .25vh .25vh rgba(255,255,255,0.2);
-}
-footer>.layout {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0px -.25vh .25vh .25vh rgba(255,255,255,0.2);
+  }
+  footer>.layout{
     position: relative;
-}
-footer .box {
+  }
+  footer .box {
     position: relative;
     overflow: hidden;
     height: 24vh;
-}
-footer ul {
+  }
+  footer ul{
     position: absolute;
     left: 0;
-}
-footer ul:after {
+  }
+  footer ul:after {
     content: '';
     display: block;
-    clear:both;
-}
-footer li {
+    clear: both;
+  }
+  footer li{
     float: left;
     margin-top: 1vh;
-    margin: 2vh 2vh 0vh 2vh;
-    width: 20ch;
+    margin: 2vh 2vh 0 2vh;
+    width: 20vh;
     height: 20vh;
+  
     text-align: center;
     cursor: pointer;
-}
-footer li:hover {
+  }
+  footer li:hover {
     box-shadow: 0 0 .5vh .5vh rgba(255,255,255,0.8);
-}
-footer li .cover {
+  }
+  footer li .cover {
     height: 16vh;
     background-size: cover;
     background-position: center center;
-}
-footer h3 {
+  }
+  footer h3{
     font-size: 2vh;
     color: rgba(255,255,255,0.6);
     margin-top: 1vh;
-}
-footer li.active {
+  }
+  footer li.active {
     box-shadow: 0 0 .5vh .5vh rgba(255,255,255,0.8);
-}
-footer .iconfont {
+  
+  }
+  
+  footer .iconfont {
     position: absolute;
     top: 4vh;
     font-size: 6vh;
-    color: rgba(255,255,255,0.6);
+    color: rgba(255, 255, 255, 0.4);
     opacity: 0;
     transition: all .4s;
     cursor: pointer;
-}
-footer:hover .iconfont {
+  }
+  footer:hover .iconfont {
     opacity: 1;
-}
-footer .iconfont:hover {
-    color: rgba(255,255,255,0.8);    
-}
-footer .icon-left {
+  }
+  footer .iconfont:hover {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  footer .icon-left {
     left: -8vh;
-}
-footer .icon-right {
+  }
+  footer .icon-right {
     right: -8vh;
-}
-.boomText {
+  }
+  
+  .boomText{
     opacity: 0;
     display: inline-block;
-}
+  }
+  
+  
